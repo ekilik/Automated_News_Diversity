@@ -1,3 +1,5 @@
+# Automated Analysis of News Content Diversity: A Comparison of Computational Techniques for Identifying Topics, Actors and Viewpoints in News Articles
+
 This repository is for the paper "Automated Analysis of News Content Diversity: A Comparison of Computational Techniques for Identifying Topics, Actors and Viewpoints in News Articles"
 
 In this paper, various computational techniques are compared for the analysis of news content diversity subdimensions. In the literature, three key subdimensions of content diversity is examined: 
@@ -8,4 +10,8 @@ In this paper, various computational techniques are compared for the analysis of
 Through systematic comparison of supervised machine learning, topic modeling, Named Entity Recognition, and open-source Large Language Models (LLMs) against human annotations, this research assesses their effectiveness in capturing content diversity dimensions as conceptualized in journalism studies.
 News articles from the NOS.nl (The Dutch Public News Broadcaster) mentioning Covid*, Corona* and Sars-cov* are collected as the test case.
 
-The "Scripts" folder includes the Python notebooks that can be used to replicate the study. 
+The *"Scripts"* folder includes the Python notebooks that can be used to replicate the study. 
+The *"Visualizations_Paper* folder includes the figures used in the paper. Figure1_AnalysisWorkflow shows the analyses that correspond to the scripts shared in the "Scripts" folder.
+
+For questions and other comments, you can contact me via the following e-mail address: e.kilik@uva.nl
+
