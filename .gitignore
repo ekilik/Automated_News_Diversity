@@ -1,0 +1,18 @@
+.DS_Store
+**/.DS_Store
+
+# Jupyter
+**/.ipynb_checkpoints/
+
+# Data: never commit article texts or intermediate data (README is tracked)
+data/*
+!data/README.md
+*.csv
+*.pkl
+*.parquet
+*.feather
+
+# Model artifacts / caches
+*.bin
+*.safetensors
+__pycache__/
