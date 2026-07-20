@@ -33,6 +33,10 @@ The `Visualizations/` folder contains the figures used in the paper.
 
 Two open-source, 7-billion-parameter LLMs are evaluated: **Mistral-7B-Instruct-v0.2** and **Starling-LM-7B-alpha**. Supervised classifiers use **RobBERT-2023** (a Dutch RoBERTa model) and a TF-IDF + **SVM** baseline. Named entity recognition uses the **Stanza** Dutch pipeline. See the paper's appendices for hyperparameters and prompts.
 
+The fine-tuned RobBERT models are available on Hugging Face:
+- [`kilikelif/robbert-dutchnews-source-identifier`](https://huggingface.co/kilikelif/robbert-dutchnews-source-identifier) (quoted/paraphrased source identification)
+- [`kilikelif/robbert-dutchnews-source-function-classifier`](https://huggingface.co/kilikelif/robbert-dutchnews-source-function-classifier) (actor function classification)
+
 ## Data
 
 The article texts are **not** included in this repository. See [`data/README.md`](data/README.md) for what the notebooks expect.
@@ -45,6 +49,12 @@ Dependencies are listed in `environment.yml` (conda). The analysis was run on th
 conda env create -f environment.yml
 conda activate mistralenv
 ```
+
+## How to cite
+
+If you use this code, please cite the paper (details to be completed on publication):
+
+> Kılık, E. (Year). *Computational Analysis of News Content Diversity: A Comparison of Methods for Measuring Topics, Actors and Viewpoints*. Journal, Volume(Issue), pages. https://doi.org/DOI
 
 ## License
 
