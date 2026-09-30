@@ -11,6 +11,12 @@ data/*
 *.pkl
 *.parquet
 *.feather
+!data/coded_df_topics_full.csv
+!data/coded_df_actors_full.csv
+!data/reliability_topics_researcher.csv
+!data/reliability_actors_final_cleaned_researcher.csv
+!data/reliability_topics_final_extra.csv
+!data/reliability_actors_final_extra.csv
 
 # Model artifacts / caches
 *.bin
