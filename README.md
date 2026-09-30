@@ -21,7 +21,6 @@ The `Scripts/` folder contains the Python notebooks, organized as a sequential p
 | `3_Actor_Extraction_Function_Classification` | Actor identification via NER + quote classifiers (SVM/RobBERT) and via LLMs, then classification into four function categories |
 | `4_Stance_Detection` | Viewpoint (stance) detection: whether an actor mentions Covid-19 measures, and whether the stance is supportive or opposing (SVM, RobBERT, LLMs) |
 | `5_Annotation_Reliability` | Sampling procedure and inter-coder reliability analysis (Krippendorff's alpha) for the gold-standard annotations |
-| `6_Evaluation` | Compilation of the performance-comparison tables reported in the paper |
 
 The pipeline is summarized in the analysis workflow below:
 
