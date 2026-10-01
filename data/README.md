@@ -9,9 +9,9 @@ This folder contains the manually annotated data used to train and evaluate the 
 | `coded_df_topics_full.csv` | Main-topic and sub-topic annotations (796 articles) | main_coder, second_coder |
 | `coded_df_actors_full.csv` | Actor annotations: actor, type, function, quotation and stance towards Covid-19 measures | main_coder, second_coder |
 | `reliability_topics_researcher.csv` | Topic annotations of the 120 held-out articles by all three coders | researcher, main_coder, second_coder |
-| `reliability_actors_final_cleaned_researcher.csv` | Actor annotations of the held-out articles by all three coders | researcher, main_coder, second_coder |
+| `reliability_actors_final_cleaned_researcher.csv` | Actor annotations of the held-out articles by all three coders; used for the reported inter-coder reliability (main_coder vs second_coder) and as the gold standard for model evaluation (researcher) | researcher, main_coder, second_coder |
 | `reliability_topics_final_extra.csv` | Double-coded topic annotations used for inter-coder reliability | main_coder, second_coder |
-| `reliability_actors_final_extra.csv` | Double-coded actor annotations used for inter-coder reliability | main_coder, second_coder |
+| `reliability_actors_final_extra.csv` | Double-coded actor annotations prepared from the raw annotation exports (intermediate output of `2_prepare_reliability_data.ipynb`; not used for the reported reliability) | main_coder, second_coder |
 
 ### Manual validation of model outputs
 
