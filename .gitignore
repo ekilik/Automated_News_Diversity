@@ -4,6 +4,9 @@
 # Jupyter
 **/.ipynb_checkpoints/
 
+# Local working copies (contain coder names and local paths; never publish)
+**/Archive/
+
 # Data: never commit article texts, raw Qualtrics files, or intermediate data
 data/*
 !data/README.md
@@ -13,7 +16,7 @@ data/*
 *.feather
 *.sav
 
-# Whitelisted annotation CSV files only
+# Whitelisted annotation files only
 !data/coded_df_topics_full.csv
 !data/coded_df_actors_full.csv
 !data/reliability_topics_researcher.csv
@@ -21,6 +24,7 @@ data/*
 !data/reliability_topics_final_extra.csv
 !data/reliability_actors_final_extra.csv
 !data/ALLcorona_keywords_list_final_v2.csv
+!data/*_manual.xlsx
 
 # Model artifacts / caches
 *.bin

@@ -13,10 +13,20 @@ The raw annotations are collected in Qualtrics (`.sav` format) and processed by 
 | `coded_df_topics_full.csv` | Main-topic and sub-topic annotations (796 articles) | main_coder, second_coder |
 | `coded_df_actors_full.csv` | Actor annotations: actor, type, function, quotation and stance towards Covid-19 measures | main_coder, second_coder |
 | `reliability_topics_researcher.csv` | Topic annotations of the 120 held-out articles by all three coders | researcher, main_coder, second_coder |
-| `reliability_actors_final_cleaned_researcher.csv` | Actor annotations of the held-out articles by all three coders | researcher, main_coder, second_coder |
+| `reliability_actors_final_cleaned_researcher.csv` | Actor annotations of the held-out articles by all three coders; used for the reported inter-coder reliability (main_coder vs second_coder) and as the gold standard for model evaluation (researcher) | researcher, main_coder, second_coder |
 | `reliability_topics_final_extra.csv` | Double-coded topic annotations used for inter-coder reliability | main_coder, second_coder |
-| `reliability_actors_final_extra.csv` | Double-coded actor annotations used for inter-coder reliability | main_coder, second_coder |
+| `reliability_actors_final_extra.csv` | Double-coded actor annotations prepared from the raw annotation exports (intermediate output of `2_prepare_reliability_data.ipynb`; not used for the reported reliability) | main_coder, second_coder |
 
+### Manual validation of model outputs
+
+| File | Content |
+| --- | --- |
+| `actor_names_researcher_SVM_manual.xlsx` | Manual validation of SVM actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_ROBBERT_manual.xlsx` | Manual validation of RobBERT actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_mistral_manual.xlsx` | Manual validation of Mistral-7B actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_starling_manual.xlsx` | Manual validation of Starling-7B actor extraction results against gold-standard researcher annotations |
+
+These files document the researcher's manual review of each model's actor extraction performance, flagging false positives, false negatives, and boundary cases.
 
 ## Coders
 
@@ -42,7 +52,7 @@ The raw annotations are collected in Qualtrics (`.sav` format) and processed by 
 - **Sections 1–4**: All analysis, model training, and model application notebooks require the full article text. This includes topic modeling, actor extraction, and stance detection across all approaches.
 
 - **Section 5 (Annotation Reliability)**:
-  - **Notebooks 1–2** (`prep_sample_annotation.ipynb`, `prepare_reliability_data.ipynb`): These read the raw Qualtrics `.sav` files (`nos_coded_*.sav`) and produce the cleaned CSV files. They require access to the original Qualtrics exports and intermediate data files (`final_nosarticles.csv`, `ALLcorona_keywords_list_final_v2.csv`).
-  - **Notebooks 3–4** (`reliability_topics.ipynb`, `reliability_actors.ipynb`): These analyze inter-coder reliability using only the cleaned annotated CSVs listed above. They compare human annotations across coders and against model predictions, and require no article text, Qualtrics files, or intermediate results.
+  - **Notebooks 1–2** (`1_prep_sample_annotation.ipynb`, `2_prepare_reliability_data.ipynb`): These read the raw Qualtrics `.sav` files (`nos_coded_*.sav`) and produce the cleaned CSV files. They require access to the original Qualtrics exports and intermediate data files (`final_nosarticles.csv`, `ALLcorona_keywords_list_final_v2.csv`).
+  - **Notebooks 3–4** (`3_reliability_topics.ipynb`, `4_reliability_actors.ipynb`): These analyze inter-coder reliability using only the cleaned annotated CSVs listed above. They compare human annotations across coders and require no article text, Qualtrics files, or intermediate results.
 
 To run the full pipeline, you will need to obtain the article texts from NOS.nl using the URLs and dates in the CSV files. To run only the reliability analysis (notebooks 3–4), no additional data is required beyond what is in the `data/` folder. 
