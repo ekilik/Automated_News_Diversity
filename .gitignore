@@ -4,6 +4,9 @@
 # Jupyter
 **/.ipynb_checkpoints/
 
+# Local working copies (contain coder names and local paths; never publish)
+**/Archive/
+
 # Data: never commit article texts or intermediate data (README is tracked)
 data/*
 !data/README.md
