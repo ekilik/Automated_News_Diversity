@@ -13,6 +13,16 @@ This folder contains the manually annotated data used to train and evaluate the 
 | `reliability_topics_final_extra.csv` | Double-coded topic annotations used for inter-coder reliability | main_coder, second_coder |
 | `reliability_actors_final_extra.csv` | Double-coded actor annotations used for inter-coder reliability | main_coder, second_coder |
 
+### Manual validation of model outputs
+
+| File | Content |
+| --- | --- |
+| `actor_names_researcher_SVM_manual.xlsx` | Manual validation of SVM actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_ROBBERT_manual.xlsx` | Manual validation of RobBERT actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_mistral_manual.xlsx` | Manual validation of Mistral-7B actor extraction results against gold-standard researcher annotations |
+| `actor_names_researcher_starling_manual.xlsx` | Manual validation of Starling-7B actor extraction results against gold-standard researcher annotations |
+
+These files document the researcher's manual review of each model's actor extraction performance, flagging false positives, false negatives, and boundary cases.
 
 ## Coders
 

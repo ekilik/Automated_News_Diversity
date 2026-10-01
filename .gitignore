@@ -17,6 +17,7 @@ data/*
 !data/reliability_actors_final_cleaned_researcher.csv
 !data/reliability_topics_final_extra.csv
 !data/reliability_actors_final_extra.csv
+!data/*_manual.xlsx
 
 # Model artifacts / caches
 *.bin
