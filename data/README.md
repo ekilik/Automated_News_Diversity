@@ -2,6 +2,10 @@
 
 This folder contains the manually annotated data used to train and evaluate the models. Article texts are not included, as NOS.nl news content is copyrighted. Each file lists the title, publication date and URL of the annotated articles, so the texts can be retrieved from NOS.nl.
 
+## Processing pipeline
+
+The raw annotations are collected in Qualtrics (`.sav` format) and processed by scripts in `Scripts/5_Annotation_Reliability/` into the cleaned CSV files listed below. The Qualtrics files (`nos_coded_*.sav`) are the source data; the CSV files are the cleaned, deduplicated versions used throughout the analysis pipeline.
+
 ## Files
 
 | File | Content | Coders |
@@ -39,4 +43,16 @@ These files document the researcher's manual review of each model's actor extrac
 - `topic_a` to `topic_n`: sub-topic present (1) or absent (0); categories are defined in Appendix A of the paper
 - `actor_name`, `actor_type`, `actor_function` (`actor_function_text` for "other"), `actor_pp` (party affiliation)
 - `directly_quoted`, `indirectly_quoted`: whether the actor is quoted or paraphrased
-- `talks_covid_measures`, `measure_1` to `measure_17`, `measure_other`: whether the actor mentions a Covid-19 measure; the `_positive`, `_negative` and `_neutral` columns give the actor's stance towards that measure. 
+- `talks_covid_measures`, `measure_1` to `measure_17`, `measure_other`: whether the actor mentions a Covid-19 measure; the `_positive`, `_negative` and `_neutral` columns give the actor's stance towards that measure.
+
+## Running notebooks without full text
+
+**Most notebooks require the article text** to train or apply models. Specifically:
+
+- **Sections 1–4**: All analysis, model training, and model application notebooks require the full article text. This includes topic modeling, actor extraction, and stance detection across all approaches.
+
+- **Section 5 (Annotation Reliability)**:
+  - **Notebooks 1–2** (`1_prep_sample_annotation.ipynb`, `2_prepare_reliability_data.ipynb`): These read the raw Qualtrics `.sav` files (`nos_coded_*.sav`) and produce the cleaned CSV files. They require access to the original Qualtrics exports and intermediate data files (`final_nosarticles.csv`, `ALLcorona_keywords_list_final_v2.csv`).
+  - **Notebooks 3–4** (`3_reliability_topics.ipynb`, `4_reliability_actors.ipynb`): These analyze inter-coder reliability using only the cleaned annotated CSVs listed above. They compare human annotations across coders and require no article text, Qualtrics files, or intermediate results.
+
+To run the full pipeline, you will need to obtain the article texts from NOS.nl using the URLs and dates in the CSV files. To run only the reliability analysis (notebooks 3–4), no additional data is required beyond what is in the `data/` folder. 
